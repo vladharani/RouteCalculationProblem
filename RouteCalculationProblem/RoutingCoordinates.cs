@@ -8,14 +8,15 @@ namespace RoutingPointProblem
         [TestMethod]
         public void TestRoutingCoordinates()
         {
-            
-            Assert.AreEqual(0, endX);
+            int endX;
+            int endY;
+            string[] commands = new string[] { "up" };
+            Assert.AreEqual(0, FindLastPoint(0,0,["up"],out endX, out endY));
             Assert.AreEqual(0, endY);
-            FindLastPoint(out endX, out endY);
         }
         void FindLastPoint(int startX, int startY, string[] commands, out int endX, out int endY)
         {
-            commands =new string[] { "up" };
+            
             endX = 0;
             endY = 0;
             for (int index = 0; index < commands.Length; index++)
